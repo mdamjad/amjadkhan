@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :posts
+  has_many :posts, dependent: :destroy
   validates :first_name,:last_name,:username, presence: true
   validates :password, length: { in: 6..40 }
 
